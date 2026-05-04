@@ -28,10 +28,7 @@ app = FastAPI(title="Sanyam Engineering API")
 # ✅ CORS must be added RIGHT HERE — before anything else
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "https://satin-winner-flammable.ngrok-free.dev",  # 👈 update this when ngrok URL changes
-    ],
+    allow_origins=["*"]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
