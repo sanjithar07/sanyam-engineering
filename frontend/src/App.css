@@ -1,0 +1,113 @@
+/* Sanyam Engineering – Premium Industrial Dark Theme */
+.App {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #e8e8e8;
+}
+
+/* Grain overlay */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.9'/></svg>");
+}
+
+/* Gold gradient text */
+.gold-text {
+  background: linear-gradient(180deg, #E9D08A 0%, #C5A059 55%, #8A6F33 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 900ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gold rule */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #C5A059 50%, transparent 100%);
+}
+
+/* Buttons */
+.btn-gold {
+  background: linear-gradient(180deg, #D4AF37 0%, #C5A059 100%);
+  color: #0a0a0a;
+  box-shadow: 0 10px 30px -10px rgba(197, 160, 89, 0.55);
+  transition: transform 280ms ease, box-shadow 280ms ease, filter 280ms ease;
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px -10px rgba(197, 160, 89, 0.7);
+  filter: brightness(1.08);
+}
+.btn-outline-gold {
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  color: #E9D08A;
+  background: transparent;
+  transition: all 280ms ease;
+}
+.btn-outline-gold:hover {
+  border-color: #C5A059;
+  background: rgba(197, 160, 89, 0.08);
+}
+
+/* Dark cards */
+.card-dark {
+  background: #111114;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color 400ms ease, transform 400ms ease;
+}
+.card-dark:hover {
+  border-color: rgba(197, 160, 89, 0.45);
+  transform: translateY(-3px);
+}
+
+/* Typography */
+.font-display {
+  font-family: "Syne", "Archivo Black", Impact, sans-serif;
+  letter-spacing: -0.02em;
+}
+.font-mono-caps {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Hero overlay */
+.hero-overlay {
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(197,160,89,0.10) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(10,10,10,0.45) 0%, rgba(10,10,10,0.75) 55%, #0a0a0a 100%);
+}
+
+/* WhatsApp pulse */
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+  70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+.wa-pulse { animation: pulseGreen 2.4s infinite; }
+
+/* Selection */
+::selection { background: #C5A059; color: #0a0a0a; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #C5A059; }
